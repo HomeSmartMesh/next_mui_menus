@@ -74,7 +74,7 @@ function NavTabs() {
     </Box>
     <Box  sx={{ borderColor: 'divider',backgroundColor:"#1976D2",flexGrow: 0, height:51 }}>
         <Tooltip title="Open in Github">
-            <a href="https://github.com/WebSVG/next-svg" target="_blank" rel="noopener">
+            <a href="https://github.com/HomeSmartMesh/next_mui_menus" target="_blank" rel="noopener">
                 <Button sx={{ my: 1, color: 'white'}}>
                     <GitHubIcon/>
                 </Button>
