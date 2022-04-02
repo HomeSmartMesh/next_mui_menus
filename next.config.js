@@ -1,5 +1,5 @@
 module.exports = {
     outDir: 'docs',
-    basePath: '/menus',
+    basePath: '/next_mui_menus',
     drawerWidth:200
 };
