@@ -1,9 +1,10 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import {Tabs, Tab, Box, Button, Typography,
-  styled } from '@mui/material';
+  styled,Tooltip, Stack } from '@mui/material';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import config from '../next.config'
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const pages = [
   {name:'Type 1',href:'/type_1'},
@@ -36,7 +37,13 @@ function NavTabs() {
   }
   //
   return (
-    <Box sx={{ borderColor: 'divider',backgroundColor:"#1976D2" }}>
+    <>
+    <Stack
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+    <Box sx={{ backgroundColor:"#1976D2",flexGrow: 1 }}>
       <Tabs
         value={value}
         onChange={handleChange}
@@ -56,7 +63,7 @@ function NavTabs() {
       >
         {pages.map((page,index)=>
           <Link href={page.href} key={index}>
-                    <Tab label={
+                    <Tab sx={{flexGrow:0}} label={
                         <Typography component="div" sx={{ flexGrow: 1,color: 'white', display: 'block' }}>
                           {page.name}
                         </Typography>
@@ -65,7 +72,18 @@ function NavTabs() {
         )}
       </Tabs>
     </Box>
-  );
+    <Box  sx={{ borderColor: 'divider',backgroundColor:"#1976D2",flexGrow: 0, height:51 }}>
+        <Tooltip title="Open in Github">
+            <a href="https://github.com/WebSVG/next-svg" target="_blank" rel="noopener">
+                <Button sx={{ my: 1, color: 'white'}}>
+                    <GitHubIcon/>
+                </Button>
+            </a>
+        </Tooltip>
+    </Box>
+    </Stack>
+    </>
+);
 }
 
 
