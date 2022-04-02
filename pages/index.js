@@ -5,8 +5,9 @@ import config from '../next.config'
 
 const description = `Horizontal App bar and left side pages menu`
 
-export default function Main() {
 
+
+export default function Main() {
   return (
     <>
       <Head>
@@ -14,6 +15,9 @@ export default function Main() {
       <link rel="icon" href={`${config.basePath}/favicon.ico`} />
       </Head>
       <Typography p={1}>{description}</Typography>
+      {Array.from(Array(30).keys()).map((index)=>
+        <Typography p={1} key={index}>{index}</Typography>
+      )}
     </>
   )
 }
